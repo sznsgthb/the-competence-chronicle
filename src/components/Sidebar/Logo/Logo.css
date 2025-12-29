@@ -1,0 +1,14 @@
+.logo {
+    display: flex;
+    justify-content: center;
+    line-height: 1.3;
+    padding: 2rem;
+}
+
+.sidebar-open .logo img {
+    width: 9rem;
+}
+
+.sidebar-closed .logo img {
+    width: 4rem;
+}

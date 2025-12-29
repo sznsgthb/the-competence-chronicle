@@ -1,0 +1,59 @@
+
+.form-button {
+    color: var(--black);
+    border-radius: 0.612rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    background: transparent;
+    border: solid 1px;
+    border-color: var(--glass);
+    cursor: pointer;
+    padding: 0;
+}
+
+.form-button:hover {
+    border-color: var(--glass);
+    background: linear-gradient(
+        106.37deg,
+        #ffdfeb 9.63%,
+        #fde2e3 31.55%,
+        #fbead3 90.85%
+        );
+    cursor: pointer;
+}
+
+.form-button:active {
+    border-color: var(--glass);
+    background: linear-gradient(
+        106.37deg,
+        #f3c6e1 9.63%,
+        #ffcfd1 31.55%,
+        #ffe1bc 90.85%
+    );
+}
+
+.button-icon {
+    font-size: 1.25rem;
+    stroke-width: 1px;
+}
+
+
+.close-button {
+    color: #e25f77;
+    background-color: rgba(255, 172, 183, 0.521);
+    height: 20px;
+    width: 20px;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    padding: 0.2rem;
+}
+
+.close-button:hover {
+    color: #d3445f;
+}
+
+.close-button:active {
+    color: #d3445f;
+    background-color: rgba(255, 125, 142, 0.54)
+}

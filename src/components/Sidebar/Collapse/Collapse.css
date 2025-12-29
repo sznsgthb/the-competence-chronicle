@@ -1,0 +1,49 @@
+.nav-collapse {
+    all: unset;
+    height: 3rem; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Red Hat Display Light', Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color:  #6c717d;
+    background: transparent;
+    width: 14rem;
+    border: none;
+    margin-top:auto;
+    margin-bottom: 1rem;
+    /* https://wpbeaches.com/aligning-last-item-bottom-container-flexbox/ */
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-collapse:hover {
+    border-radius: 0.612rem;
+    color: var(--black);
+    background: linear-gradient(
+        106.37deg,
+        #ffdfeb 9.63%,
+        #fde2e3 31.55%,
+        #fbead3 90.85%
+        );
+    cursor: pointer;
+}
+
+.nav-collapse:active {
+    background: linear-gradient(
+        106.37deg,
+        #f3c6e1 9.63%,
+        #ffcfd1 31.55%,
+        #ffe1bc 90.85%
+    );
+}
+
+.rotate-icon {
+    rotate: 180deg;
+}
+
+.sidebar-closed .nav-collapse {
+    display: flex;
+    justify-content: center;
+    width: 3.5rem;
+}

@@ -1,0 +1,30 @@
+.dashboard-header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    padding: 1rem 1.25rem 0rem 1.25rem;
+}
+
+.search-field {
+    height: 3rem;
+    width: 20rem;
+    background-color: var(--glass);
+    padding: 1rem;
+    border: transparent;
+    border-radius: 2rem;
+}
+
+.dashboard-header button {
+    aspect-ratio: 1;
+    background: transparent;
+    border: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+header img {
+    height: 3rem;
+    aspect-ratio: 1;
+}

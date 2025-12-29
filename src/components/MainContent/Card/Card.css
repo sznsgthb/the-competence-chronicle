@@ -1,0 +1,83 @@
+.card-glass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    background-color: var(--glass);
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow: hidden; 
+}
+
+.card-title{
+    display: flex;
+    width: 100%;
+    justify-content: space-between
+}
+
+h2 {
+    margin: 0.5rem 0rem;
+}
+
+.card-content {
+    width: 100%;
+    overflow: auto; 
+}
+
+
+.input-field-div {
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.display-data-ul {
+    overflow-y: auto;
+    padding: 2px;
+}
+
+.display-list-item {
+    display: grid;
+    grid-template-columns: 7fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+    width: 100%;
+    margin: 0.25rem 0rem 0.25rem 0rem;
+    cursor: pointer;
+}
+
+.listitem {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--glass);
+    border-radius: 0.612rem;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.button-div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.text-input {
+    height: 2.5rem;
+    width: 100%;
+    background-color: white;
+    border: transparent;
+    border-radius: 0.612rem;
+}
+
+.update-inline-input {
+    height: 2rem;
+    width: 100%;
+    background-color: white;
+    border: transparent;
+    border-radius: 0.612rem;
+}

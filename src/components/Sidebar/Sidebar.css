@@ -1,0 +1,79 @@
+.sidebar {
+    position: relative;
+    grid-area: sidebar;
+    background-color: var(--glass);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: width 0.4s ease-in-out;
+}
+
+.nav {
+    text-decoration: none;
+    color:  #6c717d;
+    display: flex;
+    align-items: center;
+    height: 3rem; 
+    width: 14rem;
+    margin: 0.1rem 0rem 0.1rem 0rem;
+    transition: width 0.4s ease-in-out;
+}
+
+.nav:hover {
+    background: linear-gradient(
+        106.37deg,
+        #ffdfeb 9.63%,
+        #fde2e3 31.55%,
+        #fbead3 90.85%
+        );
+    border-radius: 0.612rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.nav:active {
+    background: linear-gradient(
+        106.37deg,
+        #f3c6e1 9.63%,
+        #ffcfd1 31.55%,
+        #ffe1bc 90.85%
+    );
+}
+
+.nav.selected-option {
+    background: linear-gradient(
+        106.37deg,
+        #f3c6e1 9.63%,
+        #ffcfd1 31.55%,
+        #ffe1bc 90.85%
+        );
+    border-radius: 0.612rem;
+    color: var(--black);
+}
+
+.sidebar-closed {
+    width: 5rem;
+}
+
+.sidebar-open {
+    width: 16rem;
+    min-width: 5rem;
+}
+
+.sidebar-closed .nav {
+    display: flex;
+    justify-content: center;
+    width: 3.5rem;
+    box-sizing: border-box;
+}
+
+.nav-icon {
+    font-size: 1.25rem;
+    stroke-width: 1px;
+    margin: 0rem 1rem 0rem 1rem;
+}
+
+.sidebar-closed .nav .icon{
+    font-size: 1.25rem;
+    margin: 0;
+}
