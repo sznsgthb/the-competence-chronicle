@@ -1,8 +1,9 @@
 import "./Buttons.css"
 import { TbCirclePlus } from "react-icons/tb";
+import type { AddButtonProps } from "../../../types.ts"
 
 
-function AddButton({ type, form }) {
+function AddButton({ type, form } : AddButtonProps) {
 
     return(
         <button

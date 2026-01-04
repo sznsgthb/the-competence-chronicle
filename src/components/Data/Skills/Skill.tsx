@@ -1,14 +1,15 @@
 import { useState, useContext } from 'react';
 import { SelectedIdContext } from "../../../containers/Contexts"
-
 import EditButton from "../../Buttons/EditButton";
 import SaveButton from "../../Buttons/SaveButton";
 import DeleteButton from "../../Buttons/DeleteButton";
 import "../../Buttons/Buttons.css";
 import "../../MainContent/Card/Card.css";
+import type { SkillProps } from "../../../../types.ts"
+
 
 //https://react.dev/learn/updating-arrays-in-state#updating-arrays-without-mutation
-function Skill({ skill, onClick, handleEdit, handleDelete }) {
+function Skill({ skill, onClick, handleEdit, handleDelete } : SkillProps ) {
     const { selectedSkillId } = useContext(SelectedIdContext);
     const [isEditing, setIsEditing] = useState(false);
     // let skillContent;

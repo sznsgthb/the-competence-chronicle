@@ -2,8 +2,9 @@ import { useEffect, useContext } from "react";
 import { SkillsContext, SelectedIdContext } from "../../../containers/Contexts"
 import Action from "./Action"
 import "../../MainContent/Card/Card.css"
+import type { ActionType, ActionListProps } from "../../../../types.ts"
 
-function ActionList({ actions }) {
+function ActionList({ actions } : ActionListProps ) {
 // https://react.dev/learn/rendering-lists
 const { skills, setSkills} = useContext(SkillsContext);
 const { selectedSkillId, selectedGoalId, selectedActionId, setSelectedActionId } = useContext(SelectedIdContext);
@@ -14,7 +15,7 @@ const { selectedSkillId, selectedGoalId, selectedActionId, setSelectedActionId }
       }, [selectedActionId]);
 
 
-      const handleEditAction = (nextAction) => {
+      const handleEditAction = (nextAction: ActionType) => {
         setSkills(skills.map(skill => 
             skill.id === selectedSkillId
                 ? 
@@ -41,7 +42,7 @@ const { selectedSkillId, selectedGoalId, selectedActionId, setSelectedActionId }
             );
          }
 
-      const handleDeleteAction = (idToDelete) => {
+      const handleDeleteAction = (idToDelete: number) => {
         setSkills(skills.map(skill =>  
             skill.id === selectedSkillId
                 ? 

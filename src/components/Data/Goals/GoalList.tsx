@@ -1,10 +1,10 @@
 import { useEffect, useContext } from "react";
 import { SkillsContext, SelectedIdContext } from "../../../containers/Contexts"
-
 import Goal from "./Goal";
 import "../../MainContent/Card/Card.css"
+import type { GoalType, GoalListProps } from "../../../../types.ts"
 
-function GoalList({ goals}) {
+function GoalList({ goals} : GoalListProps ) {
 // https://react.dev/learn/rendering-lists
 const { skills, setSkills} = useContext(SkillsContext);
 const { selectedSkillId, selectedGoalId, setSelectedGoalId, setSelectedActionId } = useContext(SelectedIdContext);
@@ -14,7 +14,7 @@ const { selectedSkillId, selectedGoalId, setSelectedGoalId, setSelectedActionId 
     }, [selectedGoalId]);
 
 
-    const handleEditGoal = (nextGoal) => {
+    const handleEditGoal = (nextGoal: GoalType) => {
         setSkills(skills.map(skill => 
             skill.id === selectedSkillId
             ?
@@ -34,7 +34,7 @@ const { selectedSkillId, selectedGoalId, setSelectedGoalId, setSelectedActionId 
 
 
 // https://react.dev/learn/updating-arrays-in-state
-    const handleDeleteGoal = (idToDelete) => {
+    const handleDeleteGoal = (idToDelete: number) => {
         setSkills(skills.map(skill =>  
             skill.id === selectedSkillId  
             ? 

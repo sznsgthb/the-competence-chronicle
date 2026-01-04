@@ -2,6 +2,7 @@ import { useEffect, useContext } from "react";
 import { SkillsContext, SelectedIdContext } from "../../../containers/Contexts"
 import Skill from "./Skill";
 import "../../MainContent/Card/Card.css"
+import type { SkillType } from "../../../../types.ts"
 
 function SkillList() {
 // https://react.dev/learn/rendering-lists
@@ -13,7 +14,7 @@ function SkillList() {
     }, [selectedSkillId]);
 
 
-    const handleEditSkill = (nextSkill) => {
+    const handleEditSkill = (nextSkill: SkillType) => {
         setSkills(skills.map(skill => {
             if (skill.id === nextSkill.id) {
                 return nextSkill;
@@ -24,7 +25,7 @@ function SkillList() {
     }
 
 // https://react.dev/learn/updating-arrays-in-state
-    const handleDeleteSkill = (idToDelete) => {
+    const handleDeleteSkill = (idToDelete: number) => {
         setSkills(skills.filter(skill => skill.id !== idToDelete)
         );
         setSelectedSkillId(null); //niet vergeten de sluimerende geseletecteerde staat te resetten na het uitvoeren van deze functie

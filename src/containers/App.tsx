@@ -11,13 +11,13 @@ import KnowledgeHub from '../components/MainContent/KnowledgeHub';
 import Motivation from '../components/MainContent/Motivation';
 import Settings from '../components/MainContent/Settings';
 import './App.css'
-import type { Skill } from "../../types.ts";
+import type { SkillType } from "../../types.ts";
 
 function App() {
     const [expanded, setExpanded] = useState<boolean>(true); 
     const [selected, setSelected] = useState<string>("Dashboard");
     const [show, setShow] = useState<boolean>(true);
-    const [skills, setSkills] = useState<Skill[]>(() => { 
+    const [skills, setSkills] = useState<SkillType[]>(() => { 
         const savedData = localStorage.getItem("skills"); //haal de data in string-vorm weer uit de localStorage
         return savedData ? JSON.parse(savedData ) : []; // en parse het naar een array met objecten die door javascript en de functies weer gelezen kunnen worden
     });

@@ -1,7 +1,8 @@
 import { TbEdit } from "react-icons/tb";
 import "./Buttons.css"
+import type { EditButtonProps } from "../../../types.ts";
 
-function EditButton({ onClick }) {
+function EditButton({ onClick } :  EditButtonProps ) {
 
     return(
         <button 

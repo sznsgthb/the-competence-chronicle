@@ -5,10 +5,11 @@ import SaveButton from "../../Buttons/SaveButton";
 import DeleteButton from "../../Buttons/DeleteButton";
 import "../../Buttons/Buttons.css";
 import "../../MainContent/Card/Card.css";
+import type { GoalProps } from "../../../../types.ts"
 
 
 
-function Goal({ goal, onClick, handleEdit, handleDelete }) {
+function Goal({ goal, onClick, handleEdit, handleDelete } : GoalProps) {
     const { selectedGoalId } = useContext(SelectedIdContext);
     const [isEditing, setIsEditing] = useState(false);
 

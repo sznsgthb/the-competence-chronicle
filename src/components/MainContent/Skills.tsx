@@ -72,7 +72,7 @@ function Skills() {
         setSkillError("");
     } // a function that handles the event of putting in a value
 
-    const handleSubmitSkill = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleSubmitSkill = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!skillInput.trim()) {
             setSkillError("This field is required.");
@@ -105,7 +105,7 @@ function Skills() {
         setGoalError("");
     } // a function that handles the event of putting in a value
 
-    const handleSubmitGoal= (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleSubmitGoal= (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!goalInput.trim()) {
             setGoalError("This field is required.");
@@ -156,7 +156,7 @@ function Skills() {
         setActionError("");
     } // a function that handles the event of putting in a value
 
-    const handleSubmitAction = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleSubmitAction = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!actionInput.trim()) {
             setActionError("This field is required.");
