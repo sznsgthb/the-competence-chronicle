@@ -1,7 +1,8 @@
 import CloseButton from "../../Buttons/CloseButton";
 import './Card.css';
+import type { CardProps } from "../../../../types.ts";
 
-function Card({ title, children, onClose }) {
+function Card({ title, children, onClose } : CardProps ) {
 
     return (
         <section className="card-glass">

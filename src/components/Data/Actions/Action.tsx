@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { SelectedIdContext } from "../../../containers/Contexts"
 import EditButton from "../../Buttons/EditButton";
 import SaveButton from "../../Buttons/SaveButton";
 import DeleteButton from "../../Buttons/DeleteButton";
@@ -8,12 +9,13 @@ import "../../MainContent/Card/Card.css";
 
 
 function Action({ action, onClick, handleEdit, handleDelete }) {
+    const { selectedActionId } = useContext(SelectedIdContext);
     const [isEditing, setIsEditing] = useState(false);
 
 
     return (
         <>
-            <span className="listitem" onClick={!isEditing ? onClick : undefined}>
+            <span className={selectedActionId === action.id ? "listitem active-listitem" : "listitem"} onClick={!isEditing ? onClick : undefined}>
                 {isEditing ? (
                 <input
                     className="update-inline-input"

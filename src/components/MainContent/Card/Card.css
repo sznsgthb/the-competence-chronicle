@@ -61,6 +61,13 @@ h2 {
     word-wrap: break-word;
 }
 
+.active-listitem {
+    background-color: #b3e2cd;
+    border: solid 1px;
+    border-color: rgb(161, 203, 184);
+    height: 4rem;
+}
+
 .button-div {
     display: flex;
     gap: 0.5rem;

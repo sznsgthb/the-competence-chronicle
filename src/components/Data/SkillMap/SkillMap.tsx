@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { ResponsiveCirclePacking } from '@nivo/circle-packing'
 // import { CirclePacking } from '@nivo/circle-packing'
 
@@ -12,18 +11,21 @@ function SkillMap({ data }) {
             <div className="chart-div">
                 <ResponsiveCirclePacking
                 data={data}
-                colors={node => {
-                    if (node.depth === 0) return "transparent"; // root node
-                    if (node.depth === 1) return "#f4a261"; // skills
-                    if (node.depth === 2) return "#2a9d8f"; // goals
-                    return "#e9c46a"; // actions
-                }}
+                // colors={node => {
+                //     if (node.depth === 0) return "transparent"; // root node
+                //     if (node.depth === 1) return "#f1e15b"; // skills
+                //     if (node.depth === 2) return "#e8a838"; // goals
+                //     return "#61cdbb"; // actions
+                // }}
+                colors={{ scheme: 'pastel2' }}
                 margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
                 padding={4}
                 enableLabels={true}
-                labelsFilter={e => e.node.depth > 0} 
+                labelsFilter={event => event.node.depth > 0} 
                 labelsSkipRadius={10}
                 borderWidth={1}
+                onMouseEnter={node => console.log(node)} // check wat nivo voor object structuur geeft
+                tooltip={({ data }) => <p>{data.name}</p>}
             /></div>
         
         :

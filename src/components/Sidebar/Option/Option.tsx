@@ -1,8 +1,10 @@
 import { Link  } from 'react-router-dom';
 import { motion } from "framer-motion";
 import '../Sidebar.css';
+import type { OptionProps } from "../../../../types.ts";
 
-function Option( {Icon, title, path, selected, setSelected, expanded} ) {
+
+function Option( {Icon, title, path, selected, setSelected, expanded} : OptionProps ) {
 
     return (
         <Link
@@ -10,7 +12,7 @@ function Option( {Icon, title, path, selected, setSelected, expanded} ) {
             onClick={() => {
                 setSelected(title)
                 // navigeer naar path 
-            }} // gebruik useContext ivm prop-drilling 
+            }}
             className={selected === title ? "nav selected-option" : "nav"}
         >   
             <Icon 

@@ -1,11 +1,15 @@
+import { useContext } from "react"
+import { SkillsContext } from "../../containers/Contexts"
 import Card from './Card/Card';
 import SkillMap from "../Data/SkillMap/SkillMap"
 import './MainContent.css';
 // import placeholderbubbles from "../../assets/placeholder-bubbles.png";
 
-function Dashboard({ skills }) {
+function Dashboard() {
+        const { skills } = useContext(SkillsContext);
+        // const { show, setShow} = useContext(ShowContext);
 
-    const data = {
+    const data = { //zie https://nivo.rocks/circle-packing/ tablad data voor voorbeelddata structuur
         name: "Skills",
         children: skills.map(skill => ({
           name: skill.name,
@@ -21,8 +25,8 @@ function Dashboard({ skills }) {
           // als een skill geen goals heeft, geef een placeholder value zodat bubbeltje toch zichtbaar is ook al heeft het geen goals
           value: (skill.goals || []).length === 0 ? 1 : undefined
         }))
-      }; //zie https://nivo.rocks/circle-packing/ tablad data voor voorbeelddata structuur
-
+      }; 
+// https://dev.to/theudemezue/how-to-stringify-json-data-in-javascript-38d2
       console.log(JSON.stringify(data, null, 2));
 
 

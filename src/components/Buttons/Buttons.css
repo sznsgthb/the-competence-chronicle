@@ -4,15 +4,13 @@
     border-radius: 0.612rem;
     height: 2.5rem;
     width: 2.5rem;
-    background: transparent;
-    border: solid 1px;
-    border-color: var(--glass);
+    background: var(--glass);
+    border: none;
     cursor: pointer;
     padding: 0;
 }
 
 .form-button:hover {
-    border-color: var(--glass);
     background: linear-gradient(
         106.37deg,
         #ffdfeb 9.63%,
@@ -23,7 +21,6 @@
 }
 
 .form-button:active {
-    border-color: var(--glass);
     background: linear-gradient(
         106.37deg,
         #f3c6e1 9.63%,

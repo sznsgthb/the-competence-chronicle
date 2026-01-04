@@ -1,16 +1,21 @@
 import { useEffect } from 'react';
-// import { motion } from "framer-motion";
 import { TbHome, TbPlant, TbTarget, TbHeart, TbBulb, TbStairs, TbSettings, TbChevronsRight } from "react-icons/tb";
 import Logo from "./Logo/Logo";
 import Option from "./Option/Option";
 import Collapse from "./Collapse/Collapse";
 import "./Sidebar.css";
+import type { SidebarProps } from "../../../types.ts";
 
-function Sidebar({ expanded, toggleSidebar, selected, setSelected }) {
+function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps) {
 
     useEffect(() => {
         console.log("Selected is now", selected);
       }, [selected]);
+
+
+    const toggleSidebar = () => {
+        setExpanded(prev => !prev)
+    }
 
     return (
         <aside className={expanded ? "sidebar sidebar-open" : "sidebar sidebar-closed"}>

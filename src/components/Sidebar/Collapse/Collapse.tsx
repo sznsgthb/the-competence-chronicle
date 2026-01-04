@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import './Collapse.css';
+import type { CollapseProps } from "../../../../types.ts";
 
-function Collapse( {ChevronsRight, title, toggleSidebar, expanded} ) {
+
+function Collapse( {ChevronsRight, title, toggleSidebar, expanded} : CollapseProps ) {
 
     return (
         <button className="nav-collapse" onClick={toggleSidebar} >

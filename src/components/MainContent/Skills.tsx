@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
+import { ShowContext, SkillsContext, SelectedIdContext } from "../../containers/Contexts"
 import Card from "./Card/Card";
 import Textfield from "../Forms/Textfield"
 import SkillList from "../Data/Skills/SkillList"
@@ -6,20 +7,48 @@ import GoalList from "../Data/Goals/GoalList"
 import ActionList from "../Data/Actions/ActionList"
 import "./MainContent.css";
 
-function Skills({ skills, setSkills, setShow }) {
+function Skills() {
+    const [skillInput, setSkillInput] = useState<string>("");
+    const [skillError, setSkillError] = useState<string>("");
+    const [goalInput, setGoalInput] = useState<string>("");
+    const [goalError, setGoalError] = useState<string>("");
+    const [actionInput, setActionInput] = useState<string>("");
+    const [actionError, setActionError] = useState<string>("");
+
+   // Null check functies voor de useContext hook
+    const useSkillsContext = () => {
+        const context = useContext(SkillsContext);
+        if (context === null) {
+        throw new Error("SkillsContext is null, look for provider in parent component");
+        }
+        return context;
+    }
+
+    const useSelectedIdContext = () => {
+        const context = useContext(SelectedIdContext);
+        if (context === null) {
+        throw new Error("SelectedIdContext is null, look for provider in parent component");
+        }
+        return context;
+    }
+
+    const useShowContext = () => {
+        const context = useContext(ShowContext);
+        if (context === null) {
+        throw new Error("ShowContext is null, look for provider in parent component");
+        }
+        return context;
+    }
+
+//useContext hooks
+    const { skills, setSkills} = useSkillsContext()
+    const { selectedSkillId, setSelectedSkillId, selectedGoalId, setSelectedGoalId, setSelectedActionId } = useSelectedIdContext();
+    const { setShow} = useShowContext();
 
 
-    const [skillInput, setSkillInput] = useState("");
-    const [skillError, setSkillError] = useState("");
-    const [selectedSkillId, setSelectedSkillId] = useState(null);
 
-    const [goalInput, setGoalInput] = useState("");
-    const [goalError, setGoalError] = useState("");
-    const [selectedGoalId, setSelectedGoalId] = useState(null);
 
-    const [actionInput, setActionInput] = useState("");
-    const [actionError, setActionError] = useState("");
-    const [selectedActionId, setSelectedActionId] = useState(null);
+
 
     const closeGoalPanel = () => {
         setShow(false);
@@ -34,14 +63,16 @@ function Skills({ skills, setSkills, setShow }) {
         setSelectedActionId(null); 
     }
 
+
+
 // SKILLS
-    const handleChangeSkills = (event) => {
+    const handleChangeSkills = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         setSkillInput(value);
         setSkillError("");
     } // a function that handles the event of putting in a value
 
-    const handleSubmitSkill = (event) => {
+    const handleSubmitSkill = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         if (!skillInput.trim()) {
             setSkillError("This field is required.");
@@ -50,11 +81,10 @@ function Skills({ skills, setSkills, setShow }) {
           setSkillError(""); // clear previous error if any
           handleAddSkill(skillInput); // niet vergeten de input als argument te doen
           setSkillInput("");
-        //   savedSkillId();
     } // onthou: zoveel mogelijk acties die samen uitgevoerd moeten worden in 1 functie laten, hoeft geen aparte functie voor bij te komen (handleAdd onnodig en zorgde voor bugs)
 
 
-    const handleAddSkill = (skillName) => {
+    const handleAddSkill = (skillName: string) => {
         setSkills([
             ...skills, 
                 {
@@ -67,35 +97,15 @@ function Skills({ skills, setSkills, setShow }) {
     } //https://react.dev/learn/updating-arrays-in-state
         
 
-    function handleEditSkill(nextSkill) {
-        setSkills(skills.map(skill => {
-            if (skill.id === nextSkill.id) {
-                return nextSkill;
-            } else {
-                return skill;
-            }
-        }));
-    }
-
-
-// https://react.dev/learn/updating-arrays-in-state
-    const handleDeleteSkill = (idToDelete) => {
-        setSkills(skills.filter(skill => skill.id !== idToDelete)
-        );
-        setSelectedSkillId(null); //niet vergeten de sluimerende geseletecteerde staat te resetten na het uitvoeren van deze functie
-        setSelectedGoalId(null);
-        setSelectedActionId(null);
-      };
-
 
 // GOALS
-    const handleChangeGoals = (event) => {
+    const handleChangeGoals = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         setGoalInput(value);
         setGoalError("");
     } // a function that handles the event of putting in a value
 
-    const handleSubmitGoal= (event) => {
+    const handleSubmitGoal= (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         if (!goalInput.trim()) {
             setGoalError("This field is required.");
@@ -107,7 +117,7 @@ function Skills({ skills, setSkills, setShow }) {
     }
 
 // https://react.dev/learn/updating-arrays-in-state
-    const handleAddGoal = (goalName) => {
+    const handleAddGoal = (goalName: string) => {
         setSkills(skills.map(skill =>  // kijk naar elke skill in de lijst en beslis wat we er mee moeten doen
                 skill.id === selectedSkillId  // is dit de skill waar user net op heeft geklikt?
                 ? // zo ja (true) update het volgende in de nested structuur op basis van het gegeven argument (goalName)
@@ -137,51 +147,16 @@ function Skills({ skills, setSkills, setShow }) {
         // deze functie in z'n totaliteit niet tussen [] stoppen want de functie creert zelf al een nieuwe array, anders wordt het buggy
     
 
-    function handleEditGoal(nextGoal) {
-        setSkills(skills.map(skill => 
-            skill.id === selectedSkillId
-            ?
-                { 
-                ...skill,
-                goals:  skill.goals.map(goal => {
-                    if (goal.id === nextGoal.id) {
-                        return nextGoal;
-                    } else {
-                        return goal;
-                    }
-                })
-            }
-            : skill
-        ));
-    }
-
-
-// https://react.dev/learn/updating-arrays-in-state
-    const handleDeleteGoal = (idToDelete) => {
-        setSkills(skills.map(skill =>  
-            skill.id === selectedSkillId  
-            ? 
-            { 
-                ...skill,
-                goals:  skill.goals.filter(goal => goal.id !== idToDelete)
-            }
-                : skill
-            )
-        );
-        setSelectedGoalId(null);  //niet vergeten de sluimerende geseletecteerde staat te resetten na het uitvoeren van deze functie
-        setSelectedActionId(null);
-    };
-
 
 // ACTIONS
 // https://react.dev/learn/choosing-the-state-structure#avoid-deeply-nested-state ?    
-    const handleChangeActions = (event) => {
+    const handleChangeActions = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         setActionInput(value);
         setActionError("");
     } // a function that handles the event of putting in a value
 
-    const handleSubmitAction = (event) => {
+    const handleSubmitAction = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         if (!actionInput.trim()) {
             setActionError("This field is required.");
@@ -193,7 +168,7 @@ function Skills({ skills, setSkills, setShow }) {
     }
 
 // https://react.dev/learn/updating-arrays-in-state
-    const handleAddAction = (actionName) => {
+    const handleAddAction = (actionName: string) => {
         setSkills(skills.map(skill => 
             skill.id === selectedSkillId
                 ? 
@@ -225,53 +200,8 @@ function Skills({ skills, setSkills, setShow }) {
       
     const actions = selectedGoal?.actions || [];
 
-    function handleEditAction(nextAction) {
-        setSkills(skills.map(skill => 
-            skill.id === selectedSkillId
-                ? 
-                    { 
-                        ...skill,
-                            goals: skill.goals.map(goal => // na : mag alles staan dat een waarde oplevert, dus ook een functie
-                                goal.id === selectedGoalId
-                                    ?   {
-                                        ...goal, 
-                                            actions: goal.actions.map(action => {
-                                                if (action.id === nextAction.id) {
-                                                    return nextAction;
-                                                } else {
-                                                    return action;
-                                                }
-                                            }
-                                        )
-                                    }
-                                : goal
-                            ) 
-                        }
-                    : skill
-                )
-            );
-         }
 
-    const handleDeleteAction = (idToDelete) => {
-        setSkills(skills.map(skill =>  
-            skill.id === selectedSkillId
-                ? 
-                    { 
-                        ...skill,
-                            goals: skill.goals.map(goal => // na : mag alles staan dat een waarde oplevert, dus ook een functie
-                                goal.id === selectedGoalId
-                                    ?   {
-                                        ...goal, 
-                                            actions: goal.actions.filter(action => action.id !== idToDelete)
-                                    }
-                                : goal
-                            ) 
-                        }
-                    : skill
-            )
-        );
-        setSelectedActionId(null); //niet vergeten de sluimerende geseletecteerde staat te resetten na het uitvoeren van deze functie
-    };
+
 
       
 
@@ -287,13 +217,7 @@ function Skills({ skills, setSkills, setShow }) {
                     handleSubmit={handleSubmitSkill}
                     formId="skill-form"
                 />
-                <SkillList
-                    skills={skills}
-                    selectedSkillId={selectedSkillId}
-                    setSelectedSkillId={setSelectedSkillId}
-                    handleDelete={handleDeleteSkill}
-                    handleEdit={handleEditSkill}
-                />
+                <SkillList/>
             </Card>
 
             {selectedSkillId && (
@@ -310,10 +234,6 @@ function Skills({ skills, setSkills, setShow }) {
                     />
                     <GoalList
                         goals={goals}
-                        selectedGoalId={selectedGoalId}
-                        setSelectedGoalId={setSelectedGoalId}
-                        handleDelete={handleDeleteGoal}
-                        handleEdit={handleEditGoal}
                     />
             </Card>)}
 
@@ -321,7 +241,6 @@ function Skills({ skills, setSkills, setShow }) {
                 <Card
                     title="Actions"
                     onClose={closeActionPanel}>
-                        
                     <Textfield
                         error={actionError}
                         input={actionInput}
@@ -331,10 +250,6 @@ function Skills({ skills, setSkills, setShow }) {
                     />
                     <ActionList
                         actions={actions}
-                        selectedActionId={selectedActionId}
-                        setSelectedActionId={setSelectedActionId}
-                        handleDelete={handleDeleteAction}
-                        handleEdit={handleEditAction}
                     />
             </Card>)}
 

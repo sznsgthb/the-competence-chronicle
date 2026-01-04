@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { SelectedIdContext } from "../../../containers/Contexts"
+
 import EditButton from "../../Buttons/EditButton";
 import SaveButton from "../../Buttons/SaveButton";
 import DeleteButton from "../../Buttons/DeleteButton";
@@ -7,6 +9,7 @@ import "../../MainContent/Card/Card.css";
 
 //https://react.dev/learn/updating-arrays-in-state#updating-arrays-without-mutation
 function Skill({ skill, onClick, handleEdit, handleDelete }) {
+    const { selectedSkillId } = useContext(SelectedIdContext);
     const [isEditing, setIsEditing] = useState(false);
     // let skillContent;
 
@@ -54,13 +57,13 @@ function Skill({ skill, onClick, handleEdit, handleDelete }) {
 
     return (
         <>
-            <span className="listitem" onClick={!isEditing ? onClick : undefined}>
+            <span className={selectedSkillId === skill.id ? "listitem active-listitem" : "listitem"} onClick={!isEditing ? onClick : undefined}>
                 {isEditing ? (
                 <input
                     className="update-inline-input"
                     value={skill.name}
                     onChange={event => {
-                    handleEdit({ ...skill, name: event.target.value });
+                    handleEdit({ ...skill, name: event.target.value }); //kopieert alles wat in skill zit en plak dit in nieuw object waar de target.value in aangepast wordt
                     }}
                 />
                 ) : (
