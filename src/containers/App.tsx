@@ -32,7 +32,7 @@ function App() {
 
 
     return (
-        <BrowserRouter basename="/the-competence-chronicle">
+        <BrowserRouter>
             <div className="parent-app">
                         <ShowContext value={{ show, setShow }}>
                             <SkillsContext value={{ skills, setSkills }}>
