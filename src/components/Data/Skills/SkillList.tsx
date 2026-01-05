@@ -1,8 +1,8 @@
 import { useEffect, useContext } from "react";
-import { SkillsContext, SelectedIdContext } from "../../../containers/Contexts"
+import { SkillsContext, SelectedIdContext } from "../../../containers/Contexts";
 import Skill from "./Skill";
-import "../../MainContent/Card/Card.css"
-import type { SkillType } from "../../../../types.ts"
+import "../../MainContent/Card/Card.css";
+import type { SkillType } from "../../../../types";
 
 function SkillList() {
 // https://react.dev/learn/rendering-lists

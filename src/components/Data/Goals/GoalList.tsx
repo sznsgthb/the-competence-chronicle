@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import { SkillsContext, SelectedIdContext } from "../../../containers/Contexts"
 import Goal from "./Goal";
 import "../../MainContent/Card/Card.css"
-import type { GoalType, GoalListProps } from "../../../../types.ts"
+import type { GoalType, GoalListProps } from "../../../../types";
 
 function GoalList({ goals} : GoalListProps ) {
 // https://react.dev/learn/rendering-lists

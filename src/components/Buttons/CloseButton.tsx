@@ -1,6 +1,6 @@
 import { TbX } from "react-icons/tb";
-import "./Buttons.css"
-import type { CloseButtonProps } from "../../../types.ts"
+import "./Buttons.css";
+import type { CloseButtonProps } from "../../../types";
 
 function CloseButton({ onClose } : CloseButtonProps ) {
 

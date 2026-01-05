@@ -1,6 +1,6 @@
 import CloseButton from "../../Buttons/CloseButton";
 import './Card.css';
-import type { CardProps } from "../../../../types.ts";
+import type { CardProps } from "../../../../types";
 
 function Card({ title, children, onClose } : CardProps ) {
 

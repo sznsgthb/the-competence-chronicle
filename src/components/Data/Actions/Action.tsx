@@ -5,7 +5,7 @@ import SaveButton from "../../Buttons/SaveButton";
 import DeleteButton from "../../Buttons/DeleteButton";
 import "../../Buttons/Buttons.css";
 import "../../MainContent/Card/Card.css";
-import type { ActionProps } from "../../../../types.ts"
+import type { ActionProps } from "../../../../types";
 
 
 

@@ -4,7 +4,7 @@ import Logo from "./Logo/Logo";
 import Option from "./Option/Option";
 import Collapse from "./Collapse/Collapse";
 import "./Sidebar.css";
-import type { SidebarProps } from "../../../types.ts";
+import type { SidebarProps } from "../../../types";
 
 function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps) {
 

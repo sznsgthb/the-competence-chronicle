@@ -1,7 +1,7 @@
-import { useContext } from "react"
-import { SkillsContext } from "../../containers/Contexts"
+import { useContext } from "react";
+import { SkillsContext } from "../../containers/Contexts";
 import Card from './Card/Card';
-import SkillMap from "../Data/SkillMap/SkillMap"
+import SkillMap from "../Data/SkillMap/SkillMap";
 import './MainContent.css';
 // import placeholderbubbles from "../../assets/placeholder-bubbles.png";
 

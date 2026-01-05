@@ -1,7 +1,7 @@
 import { Link  } from 'react-router-dom';
 import { motion } from "framer-motion";
 import '../Sidebar.css';
-import type { OptionProps } from "../../../../types.ts";
+import type { OptionProps } from "../../../../types";
 
 
 function Option( {Icon, title, path, selected, setSelected, expanded} : OptionProps ) {

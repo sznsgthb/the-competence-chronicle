@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import type { SkillsContextType, ShowContextType, SelectedIdContextType } from "../../types.ts";
+import type { SkillsContextType, ShowContextType, SelectedIdContextType } from "../../types";
 
 
 // https://stackoverflow.com/questions/73456115/passing-state-through-context-in-react-gives-error-ts2339-property-setimage

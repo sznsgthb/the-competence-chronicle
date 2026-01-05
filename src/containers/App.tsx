@@ -11,7 +11,7 @@ import KnowledgeHub from '../components/MainContent/KnowledgeHub';
 import Motivation from '../components/MainContent/Motivation';
 import Settings from '../components/MainContent/Settings';
 import './App.css'
-import type { SkillType } from "../../types.ts";
+import type { SkillType } from "../../types";
 
 function App() {
     const [expanded, setExpanded] = useState<boolean>(true); 

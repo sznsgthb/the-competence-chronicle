@@ -1,6 +1,6 @@
 import { TbDeviceFloppy } from "react-icons/tb";
 import "./Buttons.css";
-import type { SaveButtonProps } from "../../../types.ts";
+import type { SaveButtonProps } from "../../../types";
 
 function SaveButton({ onClick } : SaveButtonProps) {
 

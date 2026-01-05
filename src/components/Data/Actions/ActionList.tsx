@@ -1,8 +1,8 @@
 import { useEffect, useContext } from "react";
-import { SkillsContext, SelectedIdContext } from "../../../containers/Contexts"
-import Action from "./Action"
-import "../../MainContent/Card/Card.css"
-import type { ActionType, ActionListProps } from "../../../../types.ts"
+import { SkillsContext, SelectedIdContext } from "../../../containers/Contexts";
+import Action from "./Action";
+import "../../MainContent/Card/Card.css";
+import type { ActionType, ActionListProps } from "../../../../types";
 
 function ActionList({ actions } : ActionListProps ) {
 // https://react.dev/learn/rendering-lists

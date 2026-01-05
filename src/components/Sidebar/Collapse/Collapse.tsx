@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import './Collapse.css';
-import type { CollapseProps } from "../../../../types.ts";
+import type { CollapseProps } from "../../../../types";
 
 
 function Collapse( {ChevronsRight, title, toggleSidebar, expanded} : CollapseProps ) {

@@ -1,6 +1,6 @@
 import { TbTrash } from "react-icons/tb";
 import "./Buttons.css";
-import type { DeleteButtonProps } from "../../../types.ts";
+import type { DeleteButtonProps } from "../../../types";
 
 
 function DeleteButton({ onClick } : DeleteButtonProps ) {

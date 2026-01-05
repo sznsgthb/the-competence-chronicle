@@ -5,7 +5,7 @@ import SaveButton from "../../Buttons/SaveButton";
 import DeleteButton from "../../Buttons/DeleteButton";
 import "../../Buttons/Buttons.css";
 import "../../MainContent/Card/Card.css";
-import type { SkillProps } from "../../../../types.ts"
+import type { SkillProps } from "../../../../types"
 
 
 //https://react.dev/learn/updating-arrays-in-state#updating-arrays-without-mutation

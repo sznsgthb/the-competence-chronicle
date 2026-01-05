@@ -1,5 +1,5 @@
 import { ResponsiveCirclePacking } from '@nivo/circle-packing'
-import type { SkillMapProps} from "../../../../types.ts";
+import type { SkillMapProps} from "../../../../types";
 
 function SkillMap({ data } : SkillMapProps) {
     //   const [zoomedId, setZoomedId] = useState<string | null>(null);
