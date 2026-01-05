@@ -32,7 +32,7 @@ function App() {
 
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/the-competence-chronicle">
             <div className="parent-app">
                         <ShowContext value={{ show, setShow }}>
                             <SkillsContext value={{ skills, setSkills }}>
@@ -41,6 +41,7 @@ function App() {
                                 <Sidebar expanded={expanded} setExpanded={setExpanded} selected={selected} setSelected={setSelected} />              
                                 <Routes>
                                     <Route path="/" element={<Dashboard />} />
+                                    <Route path="/dashboard" element={<Dashboard />} />
                                     <Route path="/skills" element={<Skills />} />
                                     <Route path="/progress" element={<Progress />} />
                                     <Route path="/mood" element={<Mood />} />

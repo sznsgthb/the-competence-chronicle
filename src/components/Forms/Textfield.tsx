@@ -1,6 +1,6 @@
 import AddButton from "../Buttons/AddButton";
 import "../MainContent/Card/Card.css";
-import type { TextfieldProps} from "../../../types.ts";
+import type { TextfieldProps} from "../../../types";
 
 
 function Textfield({ input, formId, error, handleChange, handleSubmit } : TextfieldProps ) {

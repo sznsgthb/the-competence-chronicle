@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { SelectedIdContext } from "../../../containers/Contexts"
+import { SelectedIdContext } from "../../../containers/Contexts";
 import EditButton from "../../Buttons/EditButton";
 import SaveButton from "../../Buttons/SaveButton";
 import DeleteButton from "../../Buttons/DeleteButton";

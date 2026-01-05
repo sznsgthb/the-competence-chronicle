@@ -7,8 +7,10 @@
 
 .sidebar-open .logo img {
     width: 9rem;
+    margin-bottom: 1rem;
 }
 
 .sidebar-closed .logo img {
     width: 4rem;
+    margin-bottom: 3rem;
 }
