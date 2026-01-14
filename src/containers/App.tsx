@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ShowContext, SkillsContext, SelectedIdContext } from "./Contexts"
 import Header from '../components/Header/Header';
 import Sidebar from '../components/Sidebar/Sidebar';
@@ -32,7 +32,7 @@ function App() {
 
 
     return (
-        <BrowserRouter basename={"the-competence-chronicle"}>
+        <HashRouter basename={"the-competence-chronicle"}>
             <div className="parent-app">
                         <ShowContext value={{ show, setShow }}>
                             <SkillsContext value={{ skills, setSkills }}>
@@ -41,18 +41,18 @@ function App() {
                                 <Sidebar expanded={expanded} setExpanded={setExpanded} selected={selected} setSelected={setSelected} />              
                                 <Routes>
                                     <Route path="/" element={<Dashboard />} />
-                                    <Route path="skills" element={<Skills />} />
-                                    <Route path="progress" element={<Progress />} />
-                                    <Route path="mood" element={<Mood />} />
-                                    <Route path="knowledgehub" element={<KnowledgeHub />} />
-                                    <Route path="motivation" element={<Motivation />} />
-                                    <Route path="settings" element={<Settings />} />
+                                    <Route path="/skills" element={<Skills />} />
+                                    <Route path="/progress" element={<Progress />} />
+                                    <Route path="/mood" element={<Mood />} />
+                                    <Route path="/knowledgehub" element={<KnowledgeHub />} />
+                                    <Route path="/motivation" element={<Motivation />} />
+                                    <Route path="/settings" element={<Settings />} />
                                 </Routes>
                                 </SelectedIdContext>
                             </SkillsContext>
                         </ShowContext>
             </div>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
