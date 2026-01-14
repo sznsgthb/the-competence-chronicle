@@ -32,7 +32,7 @@ function App() {
 
 
     return (
-        <HashRouter basename={"the-competence-chronicle"}>
+        <HashRouter>
             <div className="parent-app">
                         <ShowContext value={{ show, setShow }}>
                             <SkillsContext value={{ skills, setSkills }}>
