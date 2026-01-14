@@ -32,7 +32,7 @@ function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps
                 <Option
                     Icon={TbPlant }
                     title="Skills"
-                    path="skills"
+                    path="the-competence-chronicle/skills"
                     selected={selected}
                     setSelected={setSelected}
                     expanded={expanded}
@@ -40,7 +40,7 @@ function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps
                 <Option
                     Icon={TbTarget}
                     title="Progress"
-                    path="progress"
+                    path="the-competence-chronicle/progress"
                     selected={selected}
                     setSelected={setSelected}
                     expanded={expanded}
@@ -56,7 +56,7 @@ function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps
                 <Option
                     Icon={TbBulb}
                     title="Knowlegde Hub"
-                    path="knowledgehub"
+                    path="the-competence-chronicle/knowledgehub"
                     selected={selected}
                     setSelected={setSelected}
                     expanded={expanded}
@@ -64,7 +64,7 @@ function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps
                 <Option
                     Icon={TbStairs}
                     title="Motivation"
-                    path="motivation"
+                    path="the-competence-chronicle/motivation"
                     selected={selected}
                     setSelected={setSelected}
                     expanded={expanded}
@@ -72,7 +72,7 @@ function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps
                 <Option
                     Icon={TbSettings}
                     title="Settings"
-                    path="settings"
+                    path="the-competence-chronicle/settings"
                     selected={selected}
                     setSelected={setSelected}
                     expanded={expanded}
