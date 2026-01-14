@@ -40,14 +40,13 @@ function App() {
                                 <Header />
                                 <Sidebar expanded={expanded} setExpanded={setExpanded} selected={selected} setSelected={setSelected} />              
                                 <Routes>
-                                    <Route path="/the-competence-chronicle/" element={<Dashboard />} />
-                                    <Route path="/the-competence-chronicle/dashboard" element={<Dashboard />} />
-                                    <Route path="/the-competence-chronicle/skills" element={<Skills />} />
-                                    <Route path="/the-competence-chronicle/progress" element={<Progress />} />
-                                    <Route path="/the-competence-chronicle/mood" element={<Mood />} />
-                                    <Route path="/the-competence-chronicle/knowledgehub" element={<KnowledgeHub />} />
-                                    <Route path="/the-competence-chronicle/motivation" element={<Motivation />} />
-                                    <Route path="/the-competence-chronicle/settings" element={<Settings />} />
+                                    <Route path="the-competence-chronicle/" element={<Dashboard />} />
+                                    <Route path="the-competence-chronicle/skills" element={<Skills />} />
+                                    <Route path="the-competence-chronicle/progress" element={<Progress />} />
+                                    <Route path="the-competence-chronicle/mood" element={<Mood />} />
+                                    <Route path="the-competence-chronicle/knowledgehub" element={<KnowledgeHub />} />
+                                    <Route path="the-competence-chronicle/motivation" element={<Motivation />} />
+                                    <Route path="the-competence-chronicle/settings" element={<Settings />} />
                                 </Routes>
                                 </SelectedIdContext>
                             </SkillsContext>
