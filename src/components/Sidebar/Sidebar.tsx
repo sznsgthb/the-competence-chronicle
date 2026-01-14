@@ -32,7 +32,7 @@ function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps
                 <Option
                     Icon={TbPlant }
                     title="Skills"
-                    path="/skills"
+                    path="skills"
                     selected={selected}
                     setSelected={setSelected}
                     expanded={expanded}
@@ -40,7 +40,7 @@ function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps
                 <Option
                     Icon={TbTarget}
                     title="Progress"
-                    path="/progress"
+                    path="progress"
                     selected={selected}
                     setSelected={setSelected}
                     expanded={expanded}
@@ -48,7 +48,7 @@ function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps
                 <Option
                     Icon={TbHeart}
                     title="Mood"
-                    path="/mood"
+                    path="mood"
                     selected={selected}
                     setSelected={setSelected}
                     expanded={expanded}
@@ -56,7 +56,7 @@ function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps
                 <Option
                     Icon={TbBulb}
                     title="Knowlegde Hub"
-                    path="/knowledgehub"
+                    path="knowledgehub"
                     selected={selected}
                     setSelected={setSelected}
                     expanded={expanded}
@@ -64,7 +64,7 @@ function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps
                 <Option
                     Icon={TbStairs}
                     title="Motivation"
-                    path="/motivation"
+                    path="motivation"
                     selected={selected}
                     setSelected={setSelected}
                     expanded={expanded}
@@ -72,7 +72,7 @@ function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps
                 <Option
                     Icon={TbSettings}
                     title="Settings"
-                    path="/settings"
+                    path="settings"
                     selected={selected}
                     setSelected={setSelected}
                     expanded={expanded}
