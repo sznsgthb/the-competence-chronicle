@@ -41,12 +41,12 @@ function App() {
                                 <Sidebar expanded={expanded} setExpanded={setExpanded} selected={selected} setSelected={setSelected} />              
                                 <Routes>
                                     <Route path="/" element={<Dashboard />} />
-                                    <Route path="/skills" element={<Skills />} />
-                                    <Route path="/progress" element={<Progress />} />
-                                    <Route path="/mood" element={<Mood />} />
-                                    <Route path="/knowledgehub" element={<KnowledgeHub />} />
-                                    <Route path="/motivation" element={<Motivation />} />
-                                    <Route path="/settings" element={<Settings />} />
+                                    <Route path="skills" element={<Skills />} />
+                                    <Route path="progress" element={<Progress />} />
+                                    <Route path="mood" element={<Mood />} />
+                                    <Route path="knowledgehub" element={<KnowledgeHub />} />
+                                    <Route path="motivation" element={<Motivation />} />
+                                    <Route path="settings" element={<Settings />} />
                                 </Routes>
                                 </SelectedIdContext>
                             </SkillsContext>
