@@ -1,12 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-const base = process.env.DEPLOY_ENV === 'GH_PAGES' ? '/the-competence-chronicle/' : '/'
-
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [react()],
-    base,
     optimizeDeps: {
         include: [
         "d3-array",
