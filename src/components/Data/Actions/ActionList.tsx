@@ -27,7 +27,7 @@ const { selectedSkillId, selectedGoalId, selectedActionId, setSelectedActionId }
                                         ...goal, 
                                             actions: goal.actions.map(action => {
                                                 if (action.id === nextAction.id) {
-                                                    return nextAction;
+                                                    return nextAction; //noem: updatedAction
                                                 } else {
                                                     return action;
                                                 }

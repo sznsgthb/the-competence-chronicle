@@ -56,8 +56,4 @@ function App() {
     )
 }
 
-{/* routing aanleggen, als deze click, dan hierheen, als deze click, dan hierheen
-maar een aantal componenten blijven hetzelfde, namelijk de header en sidebar
- */}
-
 export default App

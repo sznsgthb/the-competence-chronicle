@@ -24,7 +24,11 @@
     cursor: pointer;
 }
 
-header img {
-    height: 3rem;
-    aspect-ratio: 1;
+.toggle-icon,
+.notification-icon {
+   font-size: 2rem;
+   color: white;
+   opacity: 0.7;
 }
+
+

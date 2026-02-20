@@ -19,7 +19,8 @@ function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps
 
     return (
         <aside className={expanded ? "sidebar sidebar-open" : "sidebar sidebar-closed"}>
-            <Logo />
+            <Logo expanded={expanded} //maak useContext
+            /> 
                 {/* <div> */}
                 <Option
                     Icon={TbHome}
@@ -27,7 +28,7 @@ function Sidebar({ expanded, setExpanded, selected, setSelected } : SidebarProps
                     path="/"
                     selected={selected}
                     setSelected={setSelected}
-                    expanded={expanded}
+                    expanded={expanded} 
                 />
                 <Option
                     Icon={TbPlant }
